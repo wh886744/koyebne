@@ -198,7 +198,7 @@ function getHtml(env) {
         <p class="text-slate-400 text-sm">Cloudflare Worker 部署版 v${CONFIG.VERSION}</p>
       </div>
     </div>
-    <a href="https://github.com/justlagom/koyeb-keepalive-worker" target="_blank" class="text-slate-400 hover:text-white transition">
+    <a href="https://github.com/justlagom/koyebne" target="_blank" class="text-slate-400 hover:text-white transition">
       <i class="fa-brands fa-github text-2xl"></i>
     </a>
   </div>
