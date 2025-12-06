@@ -10,13 +10,13 @@
   },
   "inbounds": [
        {
-      "listen": null,
+      "listen": 127.0.0.1,
       "port": 8080,
       "protocol": "vless",
       "settings": {
         "clients": [
           {
-            "email": "hf-xhttp",
+            "email": "enc-vision-xhttp",
             "flow": "xtls-rprx-vision",
             "id": "UUID"
           }
@@ -49,29 +49,11 @@
       }
     }
   ],
-  "routing": {
-    "rules": [
-      {
-        "type": "field",
-        "domain": [
-          "v.com"
-        ],
-        "outboundTag": "force-to-ip"
-      }
-    ]
-  },
   "outbounds": [
     {
       "protocol": "freedom",
       "settings": {
-        "domainStrategy":"UseIP"
-      }
-    },
-    {
-      "tag": "force-to-ip",
-      "protocol": "freedom",
-      "settings": {
-        "redirect": "127.0.0.1:0"
+        "domainStrategy": "UseIP"
       }
     }
   ]
