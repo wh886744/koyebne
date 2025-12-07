@@ -9,8 +9,8 @@ WORKDIR /app
 RUN set -x && \
     for i in 1 2 3; do apt-get update && break || sleep 5; done && \
     apt-get install -y --no-install-recommends wget unzip ca-certificates && \
-    # 下载 Xray-core V25.10.15
-    wget https://github.com/XTLS/Xray-core/releases/download/v25.10.15/Xray-linux-64.zip && \
+    # 下载 Xray-core 
+    wget https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip && \
     unzip Xray-linux-64.zip && \
     rm -f Xray-linux-64.zip && \
     mv xray xy && \
@@ -42,7 +42,6 @@ COPY app /app
 # 核心修复和优化：清理特殊字符并合并安装/清理步骤
 RUN export DEBIAN_FRONTEND=noninteractive && \
     apt-get update && \
-    # 注意: supervisor 是必须的
     apt-get install -y --no-install-recommends \
         tzdata curl ca-certificates wget vim net-tools unzip iputils-ping telnet git iproute2 nginx supervisor && \
     # 配置时区
